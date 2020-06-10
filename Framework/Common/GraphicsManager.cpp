@@ -9,6 +9,7 @@
 #include "IPhysicsManager.hpp"
 #include "SceneManager.hpp"
 #include "ShadowMapPass.hpp"
+#include "RayTracePass.hpp"
 
 using namespace My;
 using namespace std;
@@ -22,6 +23,7 @@ int GraphicsManager::Initialize() {
     InitConstants();
     m_DrawPasses.push_back(make_shared<ShadowMapPass>());
     m_DrawPasses.push_back(make_shared<ForwardGeometryPass>());
+    m_DrawPasses.push_back(make_shared<RayTracePass>());
     return result;
 }
 
